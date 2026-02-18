@@ -1,0 +1,87 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 40px;
+}
+
+a {
+    color: #80cbc4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+pre {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+.code-block {
+    position: relative;
+}
+
+.code-block pre {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0;
+}
+
+.copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #2b2b2b;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.copy-button:hover {
+    background: #3a3a3a;
+    color: #fff;
+}
+
+.copy-button svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #80cbc4;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.back-button svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.back-button:hover {
+    color: #a7ffeb;
+}

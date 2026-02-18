@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dateiliste</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Dateien im Ordner</h1>
+
+{% if  folders %}
+
+<h2>Folder</h2>
+
+<ul>
+    {% for folder in folders %}
+        <li><a href="/{{ folder }}">📁 {{ folder.split('/')[-1] }}</a></li>
+    {% endfor %}
+</ul>
+
+<hr>
+{% endif %}
+
+
+<h2>Files</h2>
+<ul>
+    {% for file in files %}
+        <li><a href="/{{ file }}">📄 {{ file.split('/')[-1] }}</a></li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

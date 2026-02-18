@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ filename }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='pygments.css') }}">
+</head>
+<body>
+
+<a class="back-button" href="/">
+    <svg viewBox="0 0 24 24">
+        <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    </svg>
+    <span>Zurück</span>
+</a>
+
+<div class="content">
+    {{ content|safe }}
+</div>
+
+<script src="{{ url_for('static', filename='copy-code.js') }}"></script>
+</body>
+</html>
