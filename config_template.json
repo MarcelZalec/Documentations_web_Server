@@ -1,0 +1,5 @@
+{
+    "allowed_dirs": {
+        "test": "./Files"
+    }
+}

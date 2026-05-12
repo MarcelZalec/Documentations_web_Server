@@ -6,8 +6,44 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    {# <div>
+        {% if parent is not none %}
+        <a class="back-button" href="/{{ parent }}">
+            <svg viewBox="0 0 24 24">
+                <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+            <span>Zurück</span>
+        </a>
+        {% endif %}
+    </div> #}
+    {% if parent == none %}
+    <div>
+        <select id="folderSelect">
+            {% for key, path in allowed_dirs.items() %}
+                <option 
+                    onclick="changeSource()"
+                    value="{{ key }}"
+                    {% if path == current_base %}selected{% endif %}>
+                    {{ key }} → {{ path }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+    {% endif %}
 
+{% if parent == none %}
 <h1>Dateien im Ordner</h1>
+{% endif %}
+
+{% if breadcrumbs %}
+<nav class="breadcrumbs">
+    <a href="/">Home</a>
+    {% for crumb in breadcrumbs %}
+        / <a href="/{{ crumb.path }}">{{ crumb.name }}</a>
+    {% endfor %}
+</nav>
+{% endif %}
+
 
 {% if  folders %}
 
@@ -30,5 +66,6 @@
     {% endfor %}
 </ul>
 
+<script src="{{ url_for('static', filename='index.js') }}"></script>
 </body>
 </html>

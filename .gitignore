@@ -1,3 +1,5 @@
 Files
 env
 **.old**
+config.json
+**.bat**

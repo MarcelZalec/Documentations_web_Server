@@ -8,12 +8,23 @@
 </head>
 <body>
 
-<a class="back-button" href="/">
+{#% if parent is not none %}
+<a class="back-button" href="/{{ parent }}">
     <svg viewBox="0 0 24 24">
         <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     </svg>
     <span>Zurück</span>
 </a>
+{% endif %#}
+
+{% if breadcrumbs %}
+<nav class="breadcrumbs">
+    <a href="/">Home</a>
+    {% for crumb in breadcrumbs %}
+        / <a href="/{{ crumb.path }}">{{ crumb.name }}</a>
+    {% endfor %}
+</nav>
+{% endif %}
 
 <div class="content">
     {{ content|safe }}
